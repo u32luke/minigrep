@@ -10,21 +10,13 @@ fn main() {
         process::exit(1);
     });
 
-    println!("Searching for {}", config.query);
-    println!("In file {}", config.filename);
-
     if let Err(e) = minigrep::run(config) {
         println!("Applications error: {}", e);
 
         process::exit(1);
     }
 
-    run(config);
-}
-
-struct Config {
-    query: String,
-    filename: String,
+    // run(config);
 }
 
 fn parse_config(args: &[String]) -> Config {
